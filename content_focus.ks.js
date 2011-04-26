@@ -14,12 +14,6 @@ var PLUGIN_INFO =
     <provides>
     </provides>
 	<options>
-		<option>
-			<name>zou_search.user</name>
-			<type>string</type>
-			<description>hatena user id</description>
-			<description lang="ja">はてなのユーザID</description>
-		</option>
 	</options>
     <detail><![CDATA[
 === Usage ===
@@ -35,7 +29,7 @@ gBrowser.addEventListener('load' , function(event) {
     if (!(doc instanceof HTMLDocument)) {
       return;
     }
-    alert(event.target.linkedBrowser.currentURI);
+    //alert(event.target.linkedBrowser.currentURI);
     //alert(gBrowser.currentURI.spec);
     setTimeout(function () {
         let elem = document.commandDispatcher.focusedElement;
