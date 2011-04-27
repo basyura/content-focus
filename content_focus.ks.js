@@ -20,6 +20,12 @@ var PLUGIN_INFO =
 			<description>white list</description>
 			<description lang="ja">content focus しない url のリスト</description>
 		</option>
+		<option>
+			<name>content_focus.delay_time</name>
+			<type>integer</type>
+			<description>delay time[ms] to execute. : default 100[ms]</description>
+			<description lang="ja">実行までの遅延時間 [ms] : default 100[ms]</description>
+		</option>
 	</options>
   <detail><![CDATA[
 
@@ -49,6 +55,7 @@ gBrowser.addEventListener('load' , function(event) {
         }
       }
     }
+    var delay = plugins.options["content_focus.delay_time"] || 100;
     setTimeout(function () {
         let ele = document.commandDispatcher.focusedElement;
         if (ele) {
@@ -56,5 +63,5 @@ gBrowser.addEventListener('load' , function(event) {
         }
         gBrowser.focus();
         content.focus();
-      } , 100);
+      } , delay);
   } , true);
