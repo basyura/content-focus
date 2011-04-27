@@ -37,22 +37,22 @@ plugins.options["content_focus.white_list"] = [
 
 gBrowser.addEventListener('load' , function(event) {
     let doc = event.originalTarget;
-    if (!(doc instanceof HTMLDocument)) {
+    if (doc != gBrowser.contentDocument) {
       return;
     }
     var white_list = plugins.options["content_focus.white_list"]
-    for(var i = 0 ; i < white_list.length ; i++) {
-      if(doc.location.href.match(new RegExp(white_list[i]))) {
+    var url = doc.location.href;
+    for (var i = 0 , max = white_list.length ; i < max  ; i++) {
+      if(url.match(new RegExp(white_list[i]))) {
         return;
       }
     }
     setTimeout(function () {
-        let elem = document.commandDispatcher.focusedElement;
-        if (elem) {
-          elem.blur();
+        let ele = document.commandDispatcher.focusedElement;
+        if (ele) {
+          ele.blur();
         }
         gBrowser.focus();
         content.focus();
       } , 100);
   } , true);
-
