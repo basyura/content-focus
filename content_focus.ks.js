@@ -41,10 +41,12 @@ gBrowser.addEventListener('load' , function(event) {
       return;
     }
     var white_list = plugins.options["content_focus.white_list"]
-    var url = doc.location.href;
-    for (var i = 0 , max = white_list.length ; i < max  ; i++) {
-      if(url.match(new RegExp(white_list[i]))) {
-        return;
+    if (white_list) {
+      var url = doc.location.href;
+      for (var i = 0 , max = white_list.length ; i < max  ; i++) {
+        if(url.match(new RegExp(white_list[i]))) {
+          return;
+        }
       }
     }
     setTimeout(function () {
