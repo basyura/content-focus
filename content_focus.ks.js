@@ -31,13 +31,13 @@ var PLUGIN_INFO =
 
 === 使い方 ===
 
+>||
 plugins.options["content_focus.white_list"] = [
   'http://java.sun.com/j2se/',
   '^http://www.livedoor'
 ];
+||<
 	
-履歴：
-0.0.1 initial
     ]]></detail>
 </KeySnailPlugin>;
 
