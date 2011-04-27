@@ -5,7 +5,7 @@ var PLUGIN_INFO =
     <description>focus to content with onload event</description>
     <version>0.0.1</version>
     <updateURL></updateURL>
-    <iconURL></iconURL>
+    <iconURL>http://github.com/basyura/content-focus/raw/master/icon.png</iconURL>
     <author mail="basyura@gmail.com" homepage="http://github.com/basyura/content-focus">basyura</author>
     <license>The MIT License</license>
     <license lang="ja">MIT ライセンス</license>
